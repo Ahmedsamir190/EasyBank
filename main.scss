@@ -1,0 +1,304 @@
+@use './helper/Varible' as *;
+@use './global-rules';
+@use './helper/mixin' as * ;
+
+
+                                          /*start header(navbar) */
+.navbar {
+  @include flex;
+  border-bottom: 1px solid $Dark_Blue;
+  @media(max-width:991px) {
+    padding: 22px 0px;
+  }
+
+  .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media(max-width:991px) {
+      align-items: flex-start;
+          flex-direction: column;
+          position: relative;
+    }
+  }
+  .button-menu {
+    position: absolute;
+    right: 10px;
+    top: 0;
+  }
+                                      /* class for mobile version */
+  .buttonmenu-mobile{
+    top:8px;
+  }
+
+  ul {
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    color: gray;
+    cursor: pointer;
+    @media(max-width:991px) {
+      flex-direction: column;
+    }
+    li {
+      padding: 6px;
+      &:hover {
+        font-weight: bold;
+        color: black;
+      }
+    }
+  }
+
+  .list {
+      @media(max-width:991px) {
+        display: none;
+      }
+                            /*list for mobile*/
+      &.toggle {
+      @media(max-width:991px) {
+          width: 100%;
+          text-align: center;
+          background-color: white;
+          border-top: 1px solid gainsboro;
+          display: block;
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+
+                                          /*for mobile*/
+  .toggle-background {
+    background-color: black !important;
+}
+
+
+  .request-button {
+    @include requestinvitebutton;
+    background-image: linear-gradient(to right ,$Lime_Green 20% ,$Dark_Blue,$Bright_Cyan );
+    @media (max-width:991px) {
+      display: none;
+    }
+  }
+
+  .toggler-menu  {
+    background-color: white;
+    border: none;
+    display: none;
+    cursor: pointer;
+    @media (max-width:991px) {
+      display: block;
+    }
+    & span{
+      display: block;
+      width: 45px;
+      height: 4px;
+      background-color: gray;
+      margin-bottom: 7px;
+    }
+  }
+                                  /* menu background for mobile */
+  .toggler-menu-themes {
+    background-color: black ;
+  }
+
+
+
+                              /*class for light and dark mode*/
+    .light-dark-button {
+      @include flex;
+      @include light-dark-button;
+      @media (max-width:991px) {
+        display: none;
+      }
+    }
+
+  /*dark for header*/
+    .box {
+      @include darkheader;
+    }
+    /**************************body background for dark mode */
+.back-ground-color {
+  background-color:black;
+  color: white ;
+}
+        /* End class for light and dark mode*/
+
+                                              /*End header*/
+                                              /*start Landing-one*/
+.Landing-one {
+  @include flex;
+  background-color: #dcdcdc12;
+  overflow: hidden;
+
+  .container{
+    overflow: hidden;
+    @media (max-width:767px){
+      text-align: center;
+    }
+  }
+}
+
+  .content {
+    @include flex ;
+    flex-wrap: wrap;
+    @media (max-width:767px){
+      flex-direction: column-reverse;
+    }
+  }
+  .title-content{
+    p {
+      color: gray;
+    line-height: 1.9;
+    }
+  }
+    .title-content,
+    .bg-img   {
+      flex-basis: 50%;
+      position: relative;
+      @media(max-width:767px) {
+        flex-basis: 100%;
+      }
+    }
+  .request-button-landing-one {
+    @include requestinvitebutton;
+    background-image: linear-gradient(to left ,$Lime_Green 20% ,$Dark_Blue,$Bright_Cyan );
+  }
+  img {
+    max-width: 100%;
+  }
+  .mobile-photo   {
+    transform: translateY(-22%);
+  }
+  .right-photo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+  }
+
+                                          /*End landing-one*/
+                                          /*start landing-two*/
+.Landing-two {
+  background-color:#9698a614;
+  padding-top: 35px;
+  @media(max-width:767px) {
+    margin-top: 45px;
+  }
+}
+.content-two {
+  @media(max-width:767px) {
+    text-align: center;
+  }
+  p {
+    color:$gray_color;
+    padding-bottom: 60px;
+    line-height: $line_height;
+
+  }
+}
+.all-advantage{
+  @include grid;
+  gap:35px;
+  text-align: center;
+}
+                                          /*End landing-two*/
+                                          /*start landing-three*/
+.landing-three {
+  background-color:#dcdcdc21;
+  padding:35px 0px;
+  .title {
+    padding-bottom: 20px;
+    h4 {
+      color: gray;
+      font-size: 25px;
+      font-weight: 400;
+    }
+  }
+}
+.all-card {
+  @include grid;
+  gap:50px 15px;
+  .card {
+    background-color: white;
+    border: 1px solid #dcdcdc73;
+    overflow: hidden;
+    .card-content {
+      padding:0px 18px 14px 18px;
+      h6 {
+        margin: 10px 0px 5px 0px;
+      }
+      h6 , p {
+        color: #808080ab;
+      }
+      span {
+        color: black;
+        &:hover{
+          color: $Lime_Green;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.currency-photo {
+  margin-top: -16px;
+}
+                                          /*End landing-three*/
+                                          /*start footer*/
+.footer {
+  padding-top: 35px;
+  background-color: $Dark_Blue;
+  color: $Very_Light_Gray;
+}
+.content-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media(max-width:767px){
+    flex-direction: column
+  }
+}
+.button-and-right {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.all-icons {
+  text-align: center;
+}
+.bank-logo {
+  mix-blend-mode: hard-light;
+  background-color: white;
+  padding: 7px;
+}
+.social-icons {
+  padding-top: 15px;
+  img {
+    padding: 0px 10px;
+    &:hover {
+      mix-blend-mode: difference;
+      cursor: pointer;
+      
+    }
+  }
+}
+.list-info ul {
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
+  line-height:3.5;
+  padding: 0px;
+  @media(max-width:767px){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0px;
+  }
+  li:hover{
+    color:$Lime_Green ;
+    cursor: pointer;
+  }
+}

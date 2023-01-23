@@ -1,0 +1,98 @@
+@use './helper/Varible' as *;
+
+@mixin flex  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin button {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 11%;
+  background-image: linear-gradient(to right ,$Lime_Green 20% ,$Dark_Blue,$Bright_Cyan );
+  color: white;
+}
+
+@mixin layout_shadow {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  border-top:2px solid $Lime_Green ;
+  height: 100%;
+  background-color: #dcdcdc45;
+}
+
+
+@mixin requestinvitebutton {
+  border: none;
+  padding: 10px 15px;
+  border-radius: 11%;
+  color: white;
+  cursor: pointer;
+    opacity: 0.6;
+    transition: 0.9s;
+  &:hover {
+    opacity:1;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  line-height: $line_height;
+}
+
+
+/*mixin for button dark and light*/
+
+@mixin light-dark-button {
+  justify-content: space-between;
+  border:4px solid gainsboro;
+  box-shadow: inset 1px 1px 7px 0px gainsboro;
+  padding: 6px 3px;
+  border-radius: 10%;
+  width: 10%;
+  position: relative;
+  .click-button {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #000000c4;
+    border: 7px solid gray;
+    border-radius: 20%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+  }
+
+  .click-button-dir {
+    background-color: white;
+    left:50%;
+  }
+}
+
+/*mixin for dark header*/
+@mixin darkheader {
+  .navbar {
+    background-color: black;
+  }
+  .logo{
+    background-color: white;
+    padding: 10px;
+  }
+  .list {
+    ul {
+      color: white;
+    }
+    li {
+      &:hover {
+        font-weight: bold;
+        color: white;
+      }
+    }
+  }
+}
+
